@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AS Analytics</title>
 
     <link rel="stylesheet"
-      href="{{ url_for('static', filename='index.css') }}">
+          href="{{ url_for('static', filename='index.css') }}">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -19,106 +23,134 @@
     <div class="blob blob1"></div>
     <div class="blob blob2"></div>
 
-<div class="container">
+    <div class="container">
 
-    <div class="left">
+        <!-- LADO ESQUERDO -->
 
-        <img src="{{ url_for('static', filename='img/logotech.png') }}" class="logo-login">
+        <div class="left">
 
-        <h1>
-            Insights que transformam<br>
-            dados em <span>resultados.</span>
-        </h1>
+            <img src="{{ url_for('static', filename='img/logotech.png') }}"
+                 class="logo-login">
 
-        <p>
-            Plataforma completa de KPIs e Dashboards
-            para gestão inteligente.
-        </p>
-
-        <div class="features">
-
-            <div class="feature">
-                <i class="fa-solid fa-chart-column"></i>
-                <span>Dashboards</span>
-            </div>
-
-            <div class="feature">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>KPIs</span>
-            </div>
-
-            <div class="feature">
-                <i class="fa-solid fa-database"></i>
-                <span>Banco de Dados</span>
-            </div>
-
-            <div class="feature">
-                <i class="fa-solid fa-file-excel"></i>
-                <span>Excel</span>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="right">
-
-        <div class="card">
-
-            <img src="{{ url_for('static', filename='img/logotech.png') }}" class="logo-login">
-
-            <h2>Bem-vindo de volta</h2>
+            <h1>
+                Insights que transformam
+                <br>
+                dados em <span>resultados.</span>
+            </h1>
 
             <p>
-                Faça login para acessar sua conta.
+                Plataforma completa para gestão inteligente através
+                de KPIs, Dashboards e Business Intelligence.
             </p>
 
-            <form>
+            <div class="features">
 
-                <label>Email</label>
-
-                <div class="input">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input
-                        type="email"
-                        placeholder="seu@email.com">
+                <div class="feature">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Dashboards</span>
                 </div>
 
-                <label>Senha</label>
-
-                <div class="input">
-                    <i class="fa-solid fa-lock"></i>
-                    <input
-                        type="password"
-                        placeholder="Digite sua senha">
+                <div class="feature">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>KPIs</span>
                 </div>
 
-                <div class="options">
+                <div class="feature">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Banco de Dados</span>
+                </div>
 
-                    <label>
-                        <input type="checkbox">
-                        Lembrar-me
-                    </label>
+                <div class="feature">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <span>Excel</span>
+                </div>
 
-                    <a href="#">
-                        Esqueci minha senha
-                    </a>
+            </div>
+
+        </div>
+
+        <!-- LADO DIREITO -->
+
+        <div class="right">
+
+            <div class="card">
+
+                <img src="{{ url_for('static', filename='img/logotech.png') }}"
+                     class="logo-login">
+
+                <h2>Bem-vindo ao AS Analytics</h2>
+
+                <form>
+
+                    <label>E-mail Corporativo</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            placeholder="usuario@empresa.com.br">
+
+                    </div>
+
+                    <label>Senha</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            placeholder="••••••••">
+
+                    </div>
+
+                    <div class="options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Lembrar-me
+
+                        </label>
+
+                        <a href="#">
+
+                            Esqueceu a senha?
+
+                        </a>
+
+                    </div>
+
+                    <button type="submit">
+
+                        ACESSAR
+
+                    </button>
+
+                </form>
+
+                <div class="register">
+
+                    <span>É novo?</span>
+
+                    <a href="#">Cadastre-se</a>
 
                 </div>
 
-                <button>
+                <div class="card-footer">
 
-                    Entrar
+                    © AS Tech 2026
 
-                </button>
+                </div>
 
-            </form>
+            </div>
 
         </div>
 
     </div>
-
-</div>
 
 </body>
 </html>

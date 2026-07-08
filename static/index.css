@@ -373,6 +373,49 @@ button:hover{
     font-size:13px;
 
 }
+.register{
+
+    margin-top:22px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:#94A3B8;
+
+}
+
+.register a{
+
+    color:var(--primary-light);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    margin-left:5px;
+
+}
+
+.register a:hover{
+
+    color:#49B9D0;
+
+}
+
+.card-footer{
+
+    margin-top:18px;
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:#64748B;
+
+    letter-spacing:.5px;
+
+}
 
 @media(max-width:1100px){
 
