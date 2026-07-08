@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Analytics</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+
+<div class="container">
+
+    <div class="left">
+
+        <img src="{{ url_for('static', filename='img/logotech.png') }}" class="logo-login">
+
+        <h1>
+            Insights que transformam<br>
+            dados em <span>resultados.</span>
+        </h1>
+
+        <p>
+            Plataforma completa de KPIs e Dashboards
+            para gestão inteligente.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Dashboards</span>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>KPIs</span>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-database"></i>
+                <span>Banco de Dados</span>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-file-excel"></i>
+                <span>Excel</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="card">
+
+            <img src="{{ url_for('static', filename='img/logotech.png') }}" class="logo-login">
+
+            <h2>Bem-vindo de volta</h2>
+
+            <p>
+                Faça login para acessar sua conta.
+            </p>
+
+            <form>
+
+                <label>Email</label>
+
+                <div class="input">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input
+                        type="email"
+                        placeholder="seu@email.com">
+                </div>
+
+                <label>Senha</label>
+
+                <div class="input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input
+                        type="password"
+                        placeholder="Digite sua senha">
+                </div>
+
+                <div class="options">
+
+                    <label>
+                        <input type="checkbox">
+                        Lembrar-me
+                    </label>
+
+                    <a href="#">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+                <button>
+
+                    Entrar
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
