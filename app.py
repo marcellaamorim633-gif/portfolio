@@ -27,6 +27,14 @@ def cadastro():
 
     return render_template("cadastro.html")
 
+@app.route("/recuperar", methods=["GET", "POST"])
+def recuperar():
+
+    if request.method == "POST":
+        return render_template("email_enviado.html")
+
+    return render_template("recuperar.html")
+
 @app.route("/acesso")
 def acesso():
     return render_template("acesso.html")
