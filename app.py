@@ -10,22 +10,27 @@ def login():
         email = request.form["email"]
         senha = request.form["senha"]
 
-        # Login de teste
         if email == "admin@astech.com" and senha == "123456":
-            return redirect(url_for("acesso"))
+            return redirect(url_for("portal"))
 
         return "Usuário ou senha inválidos"
 
     return render_template("index.html")
 
+
+@app.route("/portal")
+def portal():
+    return render_template("portal.html")
+
+
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
 
     if request.method == "POST":
-        # Por enquanto apenas volta para o login
         return redirect(url_for("login"))
 
     return render_template("cadastro.html")
+
 
 @app.route("/recuperar", methods=["GET", "POST"])
 def recuperar():
@@ -34,10 +39,6 @@ def recuperar():
         return render_template("email_enviado.html")
 
     return render_template("recuperar.html")
-
-@app.route("/acesso")
-def acesso():
-    return render_template("acesso.html")
 
 
 if __name__ == "__main__":
