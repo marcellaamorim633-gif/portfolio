@@ -80,56 +80,58 @@
 
                 <h2>Bem-vindo ao AS Analytics</h2>
 
-                <form>
+                <form action="{{ url_for('login') }}" method="POST">
 
                     <label>E-mail Corporativo</label>
-
+                
                     <div class="input">
-
+                
                         <i class="fa-solid fa-envelope"></i>
-
+                
                         <input
                             type="email"
-                            placeholder="usuario@empresa.com.br">
-
+                            name="email"
+                            placeholder="usuario@empresa.com.br"
+                            autocomplete="email"
+                            required>
+                
                     </div>
-
+                
                     <label>Senha</label>
-
+                
                     <div class="input">
-
+                
                         <i class="fa-solid fa-lock"></i>
-
+                
                         <input
                             type="password"
-                            placeholder="••••••••">
-
+                            name="senha"
+                            placeholder="••••••••"
+                            autocomplete="current-password"
+                            required>
+                
                     </div>
-
+                
                     <div class="options">
-
+                
                         <label>
-
-                            <input type="checkbox">
-
+                
+                            <input type="checkbox" name="lembrar">
+                
                             Lembrar-me
-
+                
                         </label>
-
+                
                         <a href="#">
-
                             Esqueceu a senha?
-
                         </a>
-
+                
                     </div>
-
+                
                     <button type="submit">
-
                         ACESSAR
-
                     </button>
-
+                
                 </form>
 
                 <div class="register">
