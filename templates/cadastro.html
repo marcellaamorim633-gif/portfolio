@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AS Analytics</title>
+    <title>Cadastro | AS Analytics</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='index.css') }}">
@@ -33,14 +33,14 @@
                  class="logo-login">
 
             <h1>
-                Insights que transformam
+                Comece a transformar
                 <br>
                 dados em <span>resultados.</span>
             </h1>
 
             <p>
-                Plataforma completa para gestão inteligente através
-                de KPIs, Dashboards e Business Intelligence.
+                Crie sua conta e tenha acesso a dashboards,
+                KPIs, Business Intelligence e análises inteligentes.
             </p>
 
             <div class="features">
@@ -78,67 +78,110 @@
                 <img src="{{ url_for('static', filename='img/logotech.png') }}"
                      class="logo-login">
 
-                <h2>Bem-vindo ao AS Analytics</h2>
+                <h2>Criar Conta</h2>
 
-                <form action="{{ url_for('login') }}" method="POST">
+                <form action="{{ url_for('cadastro') }}" method="POST">
+
+                    <label>Nome Completo</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required>
+
+                    </div>
+
+                    <label>Empresa</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <input
+                            type="text"
+                            name="empresa"
+                            placeholder="Nome da empresa">
+
+                    </div>
 
                     <label>E-mail Corporativo</label>
-                
+
                     <div class="input">
-                
+
                         <i class="fa-solid fa-envelope"></i>
-                
+
                         <input
                             type="email"
                             name="email"
                             placeholder="usuario@empresa.com.br"
-                            autocomplete="email"
                             required>
-                
+
                     </div>
-                
+
                     <label>Senha</label>
-                
+
                     <div class="input">
-                
+
                         <i class="fa-solid fa-lock"></i>
-                
+
                         <input
                             type="password"
                             name="senha"
                             placeholder="••••••••"
-                            autocomplete="current-password"
                             required>
-                
+
                     </div>
-                
+
+                    <label>Confirmar Senha</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            name="confirmar_senha"
+                            placeholder="••••••••"
+                            required>
+
+                    </div>
+
                     <div class="options">
-                
+
                         <label>
-                
-                            <input type="checkbox" name="lembrar">
-                
-                            Lembrar-me
-                
+
+                            <input
+                                type="checkbox"
+                                required>
+
+                            Aceito os termos de uso
+
                         </label>
-                
-                        <a href="#">
-                            Esqueceu a senha?
-                        </a>
-                
+
                     </div>
-                
+
                     <button type="submit">
-                        ACESSAR
+
+                        CRIAR CONTA
+
                     </button>
-                
+
                 </form>
 
                 <div class="register">
 
-                    <span>É novo?</span>
+                    <span>Já possui uma conta?</span>
 
-                    <a href="{{ url_for('cadastro') }}">Cadastre-se</a>
+                    <a href="{{ url_for('login') }}">
+
+                        Entrar
+
+                    </a>
 
                 </div>
 

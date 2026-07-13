@@ -18,6 +18,14 @@ def login():
 
     return render_template("index.html")
 
+@app.route("/cadastro", methods=["GET", "POST"])
+def cadastro():
+
+    if request.method == "POST":
+        # Por enquanto apenas volta para o login
+        return redirect(url_for("login"))
+
+    return render_template("cadastro.html")
 
 @app.route("/acesso")
 def acesso():
