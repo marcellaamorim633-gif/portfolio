@@ -633,3 +633,32 @@ footer{
     background:#237A91;
 
 }
+main{
+
+    margin-left:280px;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+@media(max-width:900px){
+
+    main{
+
+        margin-left:85px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    main{
+
+        margin-left:0;
+
+    }
+
+}

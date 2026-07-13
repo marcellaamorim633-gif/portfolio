@@ -7,12 +7,19 @@
 
     <title>AS Analytics | Portal</title>
 
+    <!-- MENU -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='nav.css') }}">
+
+    <!-- CSS DO PORTAL -->
     <link rel="stylesheet"
           href="{{ url_for('static', filename='portal.css') }}">
 
+    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
+    <!-- FONT AWESOME -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
@@ -20,216 +27,235 @@
 
 <body>
 
-<div class="container">
+    <!-- MENU LATERAL -->
+    {% include 'nav.html' %}
 
-    <!-- HEADER -->
+    <!-- CONTEÚDO -->
+    <main class="content">
 
-    <header class="topbar">
+        <div class="container">
 
-        <div class="brand">
+            <!-- HEADER -->
 
-            <img src="{{ url_for('static', filename='img/logotech.png') }}"
-                 class="logo">
+            <header class="topbar">
 
-            <div>
+                <div class="brand">
 
-                <h1>AS Analytics</h1>
+                    <img src="{{ url_for('static', filename='img/logotech.png') }}"
+                         class="logo">
 
-                <span>Business Intelligence Platform</span>
+                    <div>
 
-            </div>
+                        <h1>AS Analytics</h1>
+
+                        <span>Business Intelligence Platform</span>
+
+                    </div>
+
+                </div>
+
+                <div class="user">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <i class="fa-solid fa-user-circle"></i>
+
+                </div>
+
+            </header>
+
+            <!-- BOAS-VINDAS -->
+
+            <section class="hero">
+
+                <h2>Bem-vindo ao AS Analytics 👋</h2>
+
+                <p>
+
+                    Selecione um módulo para iniciar sua análise.
+
+                </p>
+
+            </section>
+
+            <!-- MÓDULOS -->
+
+            <section class="modules">
+
+                <a href="#" class="module-card">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-sack-dollar"></i>
+
+                    </div>
+
+                    <h3>Financeiro</h3>
+
+                    <p>
+
+                        Fluxo de Caixa,
+                        Receitas,
+                        Despesas e Indicadores Financeiros.
+
+                    </p>
+
+                    <span>Acessar →</span>
+
+                </a>
+
+                <a href="#" class="module-card">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-boxes-stacked"></i>
+
+                    </div>
+
+                    <h3>Estoque</h3>
+
+                    <p>
+
+                        Inventário,
+                        Giro,
+                        Curva ABC
+                        e Movimentações.
+
+                    </p>
+
+                    <span>Acessar →</span>
+
+                </a>
+
+                <a href="#" class="module-card">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-truck-fast"></i>
+
+                    </div>
+
+                    <h3>Logística</h3>
+
+                    <p>
+
+                        Recebimento,
+                        Separação,
+                        Expedição
+                        e KPIs.
+
+                    </p>
+
+                    <span>Acessar →</span>
+
+                </a>
+
+                <a href="#" class="module-card">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <h3>Comercial</h3>
+
+                    <p>
+
+                        Vendas,
+                        Clientes,
+                        Faturamento
+                        e Performance.
+
+                    </p>
+
+                    <span>Acessar →</span>
+
+                </a>
+
+            </section>
+
+            <!-- FERRAMENTAS -->
+
+            <section class="tools">
+
+                <h2>Ferramentas da Plataforma</h2>
+
+                <div class="tool-grid">
+
+                    <a href="#" class="tool-card">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                        <span>Dashboards</span>
+
+                    </a>
+
+                    <a href="#" class="tool-card">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>Usuários</span>
+
+                    </a>
+
+                    <a href="#" class="tool-card">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        <span>Permissões</span>
+
+                    </a>
+
+                    <a href="#" class="tool-card">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <span>Relatórios</span>
+
+                    </a>
+
+                    <a href="#" class="tool-card">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <span>Banco de Dados</span>
+
+                    </a>
+
+                    <a href="#" class="tool-card">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        <span>Configurações</span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer>
+
+                <span>
+
+                    © 2026 AS Analytics
+
+                </span>
+
+                <span>
+
+                    Python • Flask • SQL Server • Business Intelligence
+
+                </span>
+
+            </footer>
 
         </div>
 
-        <div class="user">
-
-            <i class="fa-solid fa-bell"></i>
-
-            <i class="fa-solid fa-user-circle"></i>
-
-        </div>
-
-    </header>
-
-    <!-- BEM VINDO -->
-
-    <section class="hero">
-
-        <h2>Olá 👋</h2>
-
-        <p>
-
-            Bem-vindo ao AS Analytics.
-            Selecione um módulo para iniciar sua análise.
-
-        </p>
-
-    </section>
-
-    <!-- MÓDULOS PRINCIPAIS -->
-
-    <section class="modules">
-
-        <a href="#" class="module-card">
-
-            <div class="icon">
-
-                <i class="fa-solid fa-sack-dollar"></i>
-
-            </div>
-
-            <h3>Financeiro</h3>
-
-            <p>
-                Fluxo de Caixa, Receitas,
-                Despesas e Indicadores Financeiros.
-            </p>
-
-            <span>Acessar →</span>
-
-        </a>
-
-        <a href="#" class="module-card">
-
-            <div class="icon">
-
-                <i class="fa-solid fa-boxes-stacked"></i>
-
-            </div>
-
-            <h3>Estoque</h3>
-
-            <p>
-                Inventário, Giro,
-                Curva ABC e Movimentações.
-            </p>
-
-            <span>Acessar →</span>
-
-        </a>
-
-        <a href="#" class="module-card">
-
-            <div class="icon">
-
-                <i class="fa-solid fa-truck-fast"></i>
-
-            </div>
-
-            <h3>Logística</h3>
-
-            <p>
-                Recebimento,
-                Separação,
-                Expedição e KPIs.
-            </p>
-
-            <span>Acessar →</span>
-
-        </a>
-
-        <a href="#" class="module-card">
-
-            <div class="icon">
-
-                <i class="fa-solid fa-chart-line"></i>
-
-            </div>
-
-            <h3>Comercial</h3>
-
-            <p>
-                Vendas,
-                Clientes,
-                Faturamento
-                e Performance.
-            </p>
-
-            <span>Acessar →</span>
-
-        </a>
-
-    </section>
-
-    <!-- FERRAMENTAS -->
-
-    <section class="tools">
-
-        <h2>Ferramentas da Plataforma</h2>
-
-        <div class="tool-grid">
-
-            <a href="#" class="tool-card">
-
-                <i class="fa-solid fa-chart-pie"></i>
-
-                <span>Dashboards</span>
-
-            </a>
-
-            <a href="#" class="tool-card">
-
-                <i class="fa-solid fa-users"></i>
-
-                <span>Usuários</span>
-
-            </a>
-
-            <a href="#" class="tool-card">
-
-                <i class="fa-solid fa-user-shield"></i>
-
-                <span>Permissões</span>
-
-            </a>
-
-            <a href="#" class="tool-card">
-
-                <i class="fa-solid fa-file-lines"></i>
-
-                <span>Relatórios</span>
-
-            </a>
-
-            <a href="#" class="tool-card">
-
-                <i class="fa-solid fa-database"></i>
-
-                <span>Banco de Dados</span>
-
-            </a>
-
-            <a href="#" class="tool-card">
-
-                <i class="fa-solid fa-gear"></i>
-
-                <span>Configurações</span>
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- RODAPÉ -->
-
-    <footer>
-
-        <span>
-
-            © 2026 AS Analytics
-
-        </span>
-
-        <span>
-
-            Python • Flask • SQL Server • Business Intelligence
-
-        </span>
-
-    </footer>
-
-</div>
+    </main>
 
 </body>
 </html>

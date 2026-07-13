@@ -1,0 +1,234 @@
+<nav class="sidebar">
+
+    <!-- LOGO -->
+
+    <div class="sidebar-header">
+
+        <img src="{{ url_for('static', filename='img/logotech.png') }}"
+             class="sidebar-logo">
+
+        <h2>AS Analytics</h2>
+
+        <span>Business Intelligence</span>
+
+    </div>
+
+    <!-- MENU -->
+
+    <ul class="menu">
+
+        <li class="menu-title">Geral</li>
+
+        <li>
+
+            <a href="{{ url_for('portal') }}" class="active">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Portal</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+        </li>
+
+        <li class="menu-title">Módulos</li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-sack-dollar"></i>
+
+                <span>Financeiro</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <span>Estoque</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <span>Logística</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Comercial</span>
+
+            </a>
+
+        </li>
+
+        <li class="menu-title">Gestão</li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>Dashboards</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>Relatórios</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Usuários</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Configurações</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+    <!-- PERFIL -->
+
+    <div class="sidebar-footer">
+
+        <div class="profile-dropdown">
+
+            <button class="profile-btn" id="profileBtn">
+
+                <div class="profile">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <div>
+
+                        <strong>Márcia Amorim</strong>
+
+                        <span>Administrador</span>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-up arrow"></i>
+
+            </button>
+
+            <div class="dropdown-menu" id="profileMenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Meu Perfil
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Configurações
+
+                </a>
+
+                <a href="{{ url_for('login') }}">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Sair
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<script>
+
+const profileBtn = document.getElementById("profileBtn");
+const profileMenu = document.getElementById("profileMenu");
+const arrow = document.querySelector(".arrow");
+
+profileBtn.addEventListener("click", function(){
+
+    profileMenu.classList.toggle("open");
+
+    arrow.classList.toggle("rotate");
+
+});
+
+document.addEventListener("click", function(e){
+
+    if(!profileBtn.contains(e.target) && !profileMenu.contains(e.target)){
+
+        profileMenu.classList.remove("open");
+
+        arrow.classList.remove("rotate");
+
+    }
+
+});
+
+</script>
