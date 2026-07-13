@@ -1,6 +1,6 @@
 /* ==========================================================
    AS ANALYTICS
-   AUTH.CSS
+   CADASTRO.CSS
    PARTE 1
    ========================================================== */
 
@@ -11,36 +11,42 @@
     --primary-light:#1D7485;
 
     --background:#050608;
-    --surface:rgba(15,15,18,.72);
+
+    --card:rgba(18,18,22,.58);
 
     --text:#F8FAFC;
-    --text-light:#CBD5E1;
+    --text-light:#A8B3BE;
 
     --border:rgba(255,255,255,.08);
-    --success:#16A34A;
 
 }
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
     font-family:"Poppins",sans-serif;
+
 }
 
 body{
 
     min-height:100vh;
 
-    overflow-y:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
     overflow-x:hidden;
 
-    color:var(--text);
-
     background:
-        radial-gradient(circle at top left,#113844 0%,transparent 30%),
-        radial-gradient(circle at bottom right,#0A2831 0%,transparent 35%),
+        radial-gradient(circle at top left,#123B47 0%,transparent 30%),
+        radial-gradient(circle at bottom right,#0C2C35 0%,transparent 35%),
         linear-gradient(135deg,#020304,#07090C 45%,#0B0F12 100%);
+
+    color:var(--text);
 
     position:relative;
 
@@ -50,199 +56,98 @@ body::before,
 body::after{
 
     content:"";
+
     position:fixed;
 
     border-radius:50%;
 
-    pointer-events:none;
+    filter:blur(130px);
 
-    filter:blur(120px);
+    pointer-events:none;
 
 }
 
 body::before{
 
-    width:600px;
-    height:600px;
+    width:550px;
+    height:550px;
 
     left:-220px;
     top:-220px;
 
-    background:rgba(15,76,92,.35);
+    background:rgba(15,76,92,.28);
 
 }
 
 body::after{
 
-    width:500px;
-    height:500px;
+    width:480px;
+    height:480px;
 
     right:-180px;
     bottom:-180px;
 
-    background:rgba(21,97,109,.25);
+    background:rgba(25,105,120,.22);
 
 }
 
 .container{
 
-    position:relative;
-    z-index:2;
+    width:100%;
 
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    min-height:100vh;
-
-    padding:60px 80px;
-
-}
-
-.left{
-
-    width:48%;
-
-}
-
-.logo-login{
-
-    width:120px;
-
-    display:block;
-
-    margin-bottom:35px;
-
-}
-
-.left h1{
-
-    font-size:58px;
-
-    line-height:1.1;
-
-    margin-bottom:25px;
-
-    font-weight:700;
-
-}
-
-.left h1 span{
-
-    color:var(--primary-light);
-
-}
-
-.left p{
-
-    max-width:560px;
-
-    font-size:20px;
-
-    line-height:1.8;
-
-    color:#B7C3CF;
-
-}
-
-.features{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:18px;
-
-    margin-top:45px;
-
-}
-
-.feature{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(12px);
-
-    transition:.3s;
-
-}
-
-.feature:hover{
-
-    transform:translateY(-3px);
-
-    background:rgba(255,255,255,.08);
-
-}
-
-.feature i{
-
-    color:var(--primary-light);
-
-    font-size:18px;
-
-}
-
-.feature span{
-
-    font-size:15px;
-
-}
-
-.right{
-
-    width:42%;
-
-    display:flex;
-
     justify-content:center;
+    align-items:center;
+
+    padding:60px 20px;
+
+    position:relative;
+
+    z-index:10;
 
 }
 
 .card{
 
-    width:520px;
-
+    width:560px;
     max-width:100%;
 
     padding:45px;
 
-    border-radius:28px;
+    border-radius:26px;
 
-    background:rgba(20,20,24,.55);
+    background:var(--card);
 
-    backdrop-filter:blur(35px);
-    -webkit-backdrop-filter:blur(35px);
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid var(--border);
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.55),
         inset 0 1px 0 rgba(255,255,255,.08);
 
-    transition:.35s ease;
+    transition:.35s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-4px);
 
     box-shadow:
-        0 40px 90px rgba(0,0,0,.60),
-        0 0 35px rgba(15,76,92,.18);
+        0 40px 90px rgba(0,0,0,.65),
+        0 0 35px rgba(15,76,92,.15);
+
+}
+
+.logo-login{
+
+    width:90px;
+
+    display:block;
+
+    margin:0 auto 25px;
 
 }
 
@@ -250,11 +155,11 @@ body::after{
 
     text-align:center;
 
-    color:#FFF;
+    font-size:32px;
 
-    font-size:30px;
+    font-weight:700;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
 }
 
@@ -262,17 +167,19 @@ body::after{
 
     text-align:center;
 
-    color:#A8B3BE;
+    color:var(--text-light);
 
-    line-height:1.7;
+    line-height:1.8;
 
-    margin-bottom:30px;
+    font-size:15px;
+
+    margin-bottom:35px;
 
 }
 
 form{
 
-    margin-top:25px;
+    margin-top:15px;
 
 }
 
@@ -282,27 +189,34 @@ label{
 
     margin-bottom:8px;
 
-    color:#D9E1E8;
-
     font-size:14px;
 
     font-weight:600;
+
+    color:#DDE6ED;
+
+}
+
+label small{
+
+    font-weight:400;
+
+    color:#7F8B97;
 
 }
 
 .input{
 
     display:flex;
-
     align-items:center;
 
-    gap:14px;
+    gap:15px;
 
-    height:56px;
+    height:58px;
 
     padding:0 18px;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
     border-radius:16px;
 
@@ -310,13 +224,19 @@ label{
 
     border:1px solid rgba(255,255,255,.08);
 
-    transition:.3s;
+    transition:.30s;
+
+}
+
+.input:hover{
+
+    border-color:rgba(29,116,133,.35);
 
 }
 
 .input:focus-within{
 
-    border-color:var(--primary);
+    border-color:var(--primary-light);
 
     box-shadow:0 0 0 4px rgba(15,76,92,.18);
 
@@ -325,6 +245,10 @@ label{
 .input i{
 
     color:var(--primary-light);
+
+    width:18px;
+
+    text-align:center;
 
     font-size:17px;
 
@@ -335,7 +259,6 @@ label{
     flex:1;
 
     border:none;
-
     outline:none;
 
     background:none;
@@ -348,24 +271,22 @@ label{
 
 .input input::placeholder{
 
-    color:#7F8B97;
+    color:#7E8A95;
 
 }
 /* ==========================================================
    AS ANALYTICS
-   AUTH.CSS
+   CADASTRO.CSS
    PARTE 2
    ========================================================== */
 
+/* ==========================
+   TERMOS DE USO
+   ========================== */
+
    .options{
 
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-
     margin:8px 0 28px;
-
-    font-size:14px;
 
 }
 
@@ -375,17 +296,16 @@ label{
     align-items:center;
     gap:10px;
 
-    margin:0;
+    cursor:pointer;
 
-    color:#CBD5E1;
-
+    font-size:14px;
     font-weight:400;
 
-    cursor:pointer;
+    color:var(--text-light);
 
 }
 
-.options input[type="checkbox"]{
+.options input{
 
     width:18px;
     height:18px;
@@ -396,46 +316,33 @@ label{
 
 }
 
-.options a{
-
-    color:var(--primary-light);
-
-    text-decoration:none;
-
-    transition:.3s;
-
-}
-
-.options a:hover{
-
-    color:#49B9D0;
-
-}
+/* ==========================
+   BOTÃO
+   ========================== */
 
 button{
 
     width:100%;
-    height:60px;
+    height:58px;
 
     border:none;
     border-radius:16px;
 
     background:linear-gradient(
         180deg,
-        #15616D,
-        #0F4C5C
+        var(--primary-hover),
+        var(--primary)
     );
 
     color:#FFF;
 
-    font-size:16px;
+    font-size:15px;
     font-weight:600;
-
     letter-spacing:.5px;
 
     cursor:pointer;
 
-    transition:.35s;
+    transition:.35s ease;
 
 }
 
@@ -445,7 +352,7 @@ button:hover{
 
     background:linear-gradient(
         180deg,
-        #1D7485,
+        #1C7485,
         #15616D
     );
 
@@ -460,13 +367,17 @@ button:active{
 
 }
 
+/* ==========================
+   LOGIN
+   ========================== */
+
 .register{
 
-    margin-top:25px;
+    margin-top:28px;
 
     text-align:center;
 
-    color:#94A3B8;
+    color:var(--text-light);
 
     font-size:14px;
 
@@ -474,13 +385,13 @@ button:active{
 
 .register a{
 
-    margin-left:6px;
-
     color:var(--primary-light);
 
     text-decoration:none;
 
     font-weight:600;
+
+    margin-left:6px;
 
     transition:.3s;
 
@@ -488,13 +399,17 @@ button:active{
 
 .register a:hover{
 
-    color:#49B9D0;
+    color:#4BC4DE;
 
 }
 
+/* ==========================
+   RODAPÉ
+   ========================== */
+
 .card-footer{
 
-    margin-top:20px;
+    margin-top:22px;
 
     text-align:center;
 
@@ -502,32 +417,26 @@ button:active{
 
     font-size:12px;
 
-    letter-spacing:.5px;
+    letter-spacing:.6px;
 
 }
 
-hr{
-
-    margin:30px 0;
-
-    border:none;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-}
+/* ==========================
+   ANIMAÇÃO
+   ========================== */
 
 .fade{
 
-    animation:fade .8s ease;
+    animation:fadeUp .7s ease;
 
 }
 
-@keyframes fade{
+@keyframes fadeUp{
 
     from{
 
         opacity:0;
-        transform:translateY(20px);
+        transform:translateY(25px);
 
     }
 
@@ -540,115 +449,81 @@ hr{
 
 }
 
-@media(max-width:1200px){
+/* ==========================
+   RESPONSIVIDADE
+   ========================== */
+
+@media(max-width:768px){
 
     .container{
 
-        padding:40px;
-
-    }
-
-    .left h1{
-
-        font-size:48px;
-
-    }
-
-    .card{
-
-        width:480px;
-
-    }
-
-}
-
-@media(max-width:992px){
-
-    body{
-
-        overflow:auto;
-
-    }
-
-    .container{
-
-        flex-direction:column;
-
-        justify-content:center;
-
-        gap:50px;
-
-        padding:40px 25px;
-
-    }
-
-    .left,
-    .right{
-
-        width:100%;
-
-        text-align:center;
-
-    }
-
-    .left p{
-
-        margin:auto;
-
-    }
-
-    .features{
-
-        justify-content:center;
+        padding:35px 18px;
 
     }
 
     .card{
 
         width:100%;
-        max-width:520px;
 
-    }
-
-}
-
-@media(max-width:600px){
-
-    .container{
-
-        padding:25px 15px;
-
-    }
-
-    .left h1{
-
-        font-size:36px;
-
-    }
-
-    .left p{
-
-        font-size:16px;
+        padding:35px 28px;
 
     }
 
     .logo-login{
 
-        width:95px;
-
-    }
-
-    .card{
-
-        padding:30px 22px;
-
-        border-radius:22px;
+        width:78px;
 
     }
 
     .card h2{
 
-        font-size:25px;
+        font-size:28px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+        margin-bottom:30px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .container{
+
+        padding:20px 12px;
+
+    }
+
+    .card{
+
+        padding:28px 20px;
+
+        border-radius:20px;
+
+    }
+
+    .logo-login{
+
+        width:68px;
+
+    }
+
+    .card h2{
+
+        font-size:24px;
+
+    }
+
+    .subtitle{
+
+        font-size:13px;
+
+        line-height:1.6;
 
     }
 
@@ -656,23 +531,29 @@ hr{
 
         height:52px;
 
+        padding:0 15px;
+
+    }
+
+    .input input{
+
+        font-size:14px;
+
     }
 
     button{
 
-        height:55px;
+        height:54px;
 
-    }
-
-    .feature{
-
-        width:100%;
-
-        justify-content:center;
+        font-size:15px;
 
     }
 
 }
+
+/* ==========================
+   SCROLL
+   ========================== */
 
 ::-webkit-scrollbar{
 
@@ -688,7 +569,7 @@ hr{
 
 ::-webkit-scrollbar-thumb{
 
-    background:#184F5F;
+    background:#1A5668;
 
     border-radius:20px;
 
@@ -696,6 +577,6 @@ hr{
 
 ::-webkit-scrollbar-thumb:hover{
 
-    background:#227388;
+    background:#23798F;
 
 }
