@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AS Analytics | Portal</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- MENU -->
+    <title>Dashboard | AS Analytics</title>
+
     <link rel="stylesheet"
           href="{{ url_for('static', filename='nav.css') }}">
 
-    <!-- CSS DO PORTAL -->
     <link rel="stylesheet"
           href="{{ url_for('static', filename='portal.css') }}">
 
-    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
-    <!-- FONT AWESOME -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
@@ -27,235 +26,151 @@
 
 <body>
 
-    <!-- MENU LATERAL -->
     {% include 'nav.html' %}
 
-    <!-- CONTEÚDO -->
     <main class="content">
 
         <div class="container">
 
-            <!-- HEADER -->
+            <!-- TOPO -->
 
             <header class="topbar">
 
-                <div class="brand">
+                <div>
 
-                    <img src="{{ url_for('static', filename='img/logotech.png') }}"
-                         class="logo">
+                    <h1>Resumo</h1>
 
-                    <div>
-
-                        <h1>AS Analytics</h1>
-
-                        <span>Business Intelligence Platform</span>
-
-                    </div>
+                    <span>Dashboard Executivo</span>
 
                 </div>
 
-                <div class="user">
+                <div class="top-icons">
 
                     <i class="fa-solid fa-bell"></i>
 
-                    <i class="fa-solid fa-user-circle"></i>
+                    <i class="fa-solid fa-circle-user"></i>
 
                 </div>
 
             </header>
 
-            <!-- BOAS-VINDAS -->
+            <!-- KPIs -->
 
-            <section class="hero">
+            <section class="kpis">
 
-                <h2>Bem-vindo ao AS Analytics 👋</h2>
+                <div class="kpi">
 
-                <p>
+                    <span>Receita do Mês</span>
 
-                    Selecione um módulo para iniciar sua análise.
+                    <h2>R$ 0,00</h2>
 
-                </p>
+                    <small>Sem dados</small>
 
-            </section>
+                </div>
 
-            <!-- MÓDULOS -->
+                <div class="kpi">
 
-            <section class="modules">
+                    <span>Pedidos</span>
 
-                <a href="#" class="module-card">
+                    <h2>0</h2>
 
-                    <div class="icon">
+                    <small>Hoje</small>
 
-                        <i class="fa-solid fa-sack-dollar"></i>
+                </div>
 
-                    </div>
+                <div class="kpi">
 
-                    <h3>Financeiro</h3>
+                    <span>Clientes</span>
 
-                    <p>
+                    <h2>0</h2>
 
-                        Fluxo de Caixa,
-                        Receitas,
-                        Despesas e Indicadores Financeiros.
+                    <small>Ativos</small>
 
-                    </p>
+                </div>
 
-                    <span>Acessar →</span>
+                <div class="kpi">
 
-                </a>
+                    <span>Produtos</span>
 
-                <a href="#" class="module-card">
+                    <h2>0</h2>
 
-                    <div class="icon">
-
-                        <i class="fa-solid fa-boxes-stacked"></i>
-
-                    </div>
-
-                    <h3>Estoque</h3>
-
-                    <p>
-
-                        Inventário,
-                        Giro,
-                        Curva ABC
-                        e Movimentações.
-
-                    </p>
-
-                    <span>Acessar →</span>
-
-                </a>
-
-                <a href="#" class="module-card">
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-truck-fast"></i>
-
-                    </div>
-
-                    <h3>Logística</h3>
-
-                    <p>
-
-                        Recebimento,
-                        Separação,
-                        Expedição
-                        e KPIs.
-
-                    </p>
-
-                    <span>Acessar →</span>
-
-                </a>
-
-                <a href="#" class="module-card">
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                    </div>
-
-                    <h3>Comercial</h3>
-
-                    <p>
-
-                        Vendas,
-                        Clientes,
-                        Faturamento
-                        e Performance.
-
-                    </p>
-
-                    <span>Acessar →</span>
-
-                </a>
-
-            </section>
-
-            <!-- FERRAMENTAS -->
-
-            <section class="tools">
-
-                <h2>Ferramentas da Plataforma</h2>
-
-                <div class="tool-grid">
-
-                    <a href="#" class="tool-card">
-
-                        <i class="fa-solid fa-chart-pie"></i>
-
-                        <span>Dashboards</span>
-
-                    </a>
-
-                    <a href="#" class="tool-card">
-
-                        <i class="fa-solid fa-users"></i>
-
-                        <span>Usuários</span>
-
-                    </a>
-
-                    <a href="#" class="tool-card">
-
-                        <i class="fa-solid fa-user-shield"></i>
-
-                        <span>Permissões</span>
-
-                    </a>
-
-                    <a href="#" class="tool-card">
-
-                        <i class="fa-solid fa-file-lines"></i>
-
-                        <span>Relatórios</span>
-
-                    </a>
-
-                    <a href="#" class="tool-card">
-
-                        <i class="fa-solid fa-database"></i>
-
-                        <span>Banco de Dados</span>
-
-                    </a>
-
-                    <a href="#" class="tool-card">
-
-                        <i class="fa-solid fa-gear"></i>
-
-                        <span>Configurações</span>
-
-                    </a>
+                    <small>Em estoque</small>
 
                 </div>
 
             </section>
 
-            <!-- RODAPÉ -->
+            <!-- GRÁFICO PRINCIPAL -->
 
-            <footer>
+            <section class="card">
 
-                <span>
+                <div class="card-header">
 
-                    © 2026 AS Analytics
+                    <h2>Faturamento Mensal</h2>
 
-                </span>
+                    <span>Últimos 12 meses</span>
 
-                <span>
+                </div>
 
-                    Python • Flask • SQL Server • Business Intelligence
+                <div class="chart-placeholder">
 
-                </span>
+                    <i class="fa-solid fa-chart-column"></i>
 
-            </footer>
+                    <p>
+
+                        Gráfico de faturamento
+                        (Chart.js futuramente)
+
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- ATIVIDADES -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>Últimas atividades</h2>
+
+                </div>
+
+                <ul class="activity">
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Login realizado com sucesso
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Dashboard carregado
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Aguardando conexão com banco de dados
+
+                    </li>
+
+                </ul>
+
+            </section>
 
         </div>
 
     </main>
 
 </body>
+
 </html>
