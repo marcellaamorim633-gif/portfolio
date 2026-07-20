@@ -46,11 +46,9 @@ body{
 ================================ */
 
 .container{
-
-    max-width:1450px;
-
+    width:min(100%,1450px);
     margin:auto;
-
+    padding:clamp(16px,2vw,32px);
 }
 
 /* ===============================
@@ -131,7 +129,7 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:20px;
 
@@ -199,7 +197,8 @@ body{
 
     border-radius:20px;
 
-    padding:24px;
+    grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
 
     margin-bottom:24px;
 
@@ -239,7 +238,9 @@ body{
 
 .chart-placeholder{
 
-    height:360px;
+    min-height:320px;
+    height:40vh;
+    max-height:500px;
 
     border-radius:18px;
 
