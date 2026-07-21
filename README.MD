@@ -1,4 +1,15 @@
 # Sistema de Controle Logístico
+Olá, eu sou Marcella !
+
+Desenvolvedora Web | Python | Flask | JavaScript | Html |Css
+
+📍 Campinas - SP
+
+💼 Atualmente atuando na área de TI
+
+📧 Email
+
+🔗 LinkedIn
 
 🚧 Projeto em desenvolvimento 🚧
 
