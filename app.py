@@ -1,5 +1,26 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+from dotenv import load_dotenv
+import os
+import pymysql
+
+load_dotenv()
+
+print("HOST:", os.getenv("DB_HOST"))
+print("PORT:", os.getenv("DB_PORT"))
+print("USER:", os.getenv("DB_USER"))
+print("DB:", os.getenv("DB_NAME"))
+
+conexao = pymysql.connect(
+    host=os.getenv("DB_HOST"),
+    port=int(os.getenv("DB_PORT")),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
+)
+
+cursor = conexao.cursor()
+
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
@@ -10,13 +31,52 @@ def login():
         email = request.form["email"]
         senha = request.form["senha"]
 
-        if email == "admin@astech.com" and senha == "123456":
-            return redirect(url_for("portal"))
+        cursor.execute(
+            "SELECT * FROM usuarios WHERE email = %s AND senha = %s",
+            (email, senha)
+        )
+
+        usuario = cursor.fetchone()
+
+        if usuario:
+            return redirect(url_for("acesso"))
 
         return "Usuário ou senha inválidos"
 
     return render_template("index.html")
 
+
+@app.route("/acesso")
+def acesso():
+    return render_template("acesso.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5001)
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+
+        email = request.form["email"]
+        senha = request.form["senha"]
+
+        cursor.execute(
+            "SELECT * FROM usuarios WHERE email = %s AND senha = %s",
+            (email, senha)
+        )
+
+        usuario = cursor.fetchone()
+
+        if usuario:
+            return redirect(url_for("acesso"))
+
+        return "Usuário ou senha inválidos"
+
+    return render_template("index.html")
 
 @app.route("/portal")
 def portal():
