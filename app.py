@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,session
 from dotenv import load_dotenv
 import os
 import pymysql
@@ -22,6 +22,7 @@ conexao = pymysql.connect(
 cursor = conexao.cursor()
 
 app = Flask(__name__)
+app.secret_key = "as_analytics_2026"
 
 
 # =========================
@@ -43,6 +44,11 @@ def login():
         usuario = cursor.fetchone()
 
         if usuario:
+
+            session["usuario_id"] = usuario["id"]
+            session["nome"] = usuario["nome"]
+            session["email"] = usuario["email"]
+
             return redirect(url_for("portal"))
 
         return "Usuário ou senha inválidos"
