@@ -65,7 +65,32 @@ def portal():
 def cadastro():
 
     if request.method == "POST":
-        # Depois colocaremos o INSERT no banco
+
+        nome = request.form["nome"]
+        empresa = request.form["empresa"]
+        email = request.form["email"]
+        senha = request.form["senha"]
+        confirmar_senha = request.form["confirmar_senha"]
+
+        if senha != confirmar_senha:
+            return "As senhas não coincidem."
+
+        cursor.execute("""
+            INSERT INTO usuarios
+            (nome, empresa, empresa_id, email, senha, cargo, nivel_permissao)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """, (
+            nome,
+            empresa,
+            1,
+            email,
+            senha,
+            "Usuário",
+            "USER"
+        ))
+
+        conexao.commit()
+
         return redirect(url_for("login"))
 
     return render_template("cadastro.html")
