@@ -7,9 +7,9 @@ Desenvolvedora Web | Python | Flask | JavaScript | Html |Css
 
 💼 Atualmente atuando na área de TI
 
-📧 Email
+📧 Email: marcellaamorim633@gmail.com
 
-🔗 LinkedIn
+🔗 LinkedIn: www.linkedin.com/in/marcella-amorim-analyst
 
 🚧 Projeto em desenvolvimento 🚧
 
