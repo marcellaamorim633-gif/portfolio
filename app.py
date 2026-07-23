@@ -48,6 +48,10 @@ def login():
             session["usuario_id"] = usuario["id"]
             session["nome"] = usuario["nome"]
             session["email"] = usuario["email"]
+            session["cargo"] = usuario["cargo"]
+            session["nivel_permissao"] = usuario["nivel_permissao"]
+            session["empresa_id"] = usuario["empresa_id"]
+            
 
             return redirect(url_for("portal"))
 
@@ -61,6 +65,10 @@ def login():
 # =========================
 @app.route("/portal")
 def portal():
+
+    if "usuario_id" not in session:
+        return redirect(url_for("login"))
+
     return render_template("portal.html")
 
 
@@ -74,6 +82,8 @@ def cadastro():
 
         nome = request.form["nome"]
         empresa = request.form["empresa"]
+        razao_social = request.form["razao_social"]
+        cnpj = request.form["cnpj"]
         email = request.form["email"]
         senha = request.form["senha"]
         confirmar_senha = request.form["confirmar_senha"]
@@ -82,17 +92,28 @@ def cadastro():
             return "As senhas não coincidem."
 
         cursor.execute("""
+            INSERT INTO empresas
+            (nome_fantasia, razao_social, cnpj)
+            VALUES (%s, %s, %s)
+        """, (
+            empresa,
+            razao_social,
+            cnpj
+        ))
+
+        empresa_id = cursor.lastrowid
+
+        cursor.execute("""
             INSERT INTO usuarios
-            (nome, empresa, empresa_id, email, senha, cargo, nivel_permissao)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            (nome, email, senha, cargo, nivel_permissao, empresa_id)
+            VALUES (%s, %s, %s, %s, %s, %s)
         """, (
             nome,
-            empresa,
-            1,
             email,
             senha,
-            "Usuário",
-            "USER"
+            "Administrador",
+            "ADMIN",
+            empresa_id
         ))
 
         conexao.commit()
@@ -114,6 +135,16 @@ def recuperar():
 
     return render_template("recuperar.html")
 
+# =========================
+# LOGOUT
+# =========================
+
+@app.route("/logout")
+def logout():
+
+    session.clear()
+
+    return redirect(url_for("login"))
 
 # =========================
 # EXECUTAR

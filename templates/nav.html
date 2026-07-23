@@ -161,7 +161,7 @@
 
                        <strong> <span>{{ session.get("nome", "Usuário") }}</span></strong>
 
-                        <span>Administrador</span>
+                        <span>{{ session.get("cargo", "Usuário") }}</span>
 
                     </div>
 
@@ -189,7 +189,7 @@
 
                 </a>
 
-                <a href="{{ url_for('login') }}">
+                <a href="{{ url_for('logout') }}">
 
                     <i class="fa-solid fa-right-from-bracket"></i>
 
