@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solicitar Usuário | AS Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='nav.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='usuarios.css') }}">
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <main class="content">
+
+        <div class="container">
+
+            <h1>Solicitar novo usuário</h1>
+
+            <section class="card">
+                 {% if sucesso %}
+
+                 <div class="success-message">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    {{ sucesso }}
+
+                 </div>   
+
+                 {% endif %}
+
+                <form method="POST">
+
+                    <label>Nome completo</label>
+
+                    <input type="text"
+                           name="nome"
+                           required>
+
+                    <label>E-mail</label>
+
+                    <input type="email"
+                           name="email"
+                           required>
+
+                    <label>Cargo</label>
+
+                    <input type="text"
+                           name="cargo"
+                           required>
+
+                    <button type="submit" class="btn-add">
+                        Enviar solicitação
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

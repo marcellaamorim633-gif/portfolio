@@ -119,6 +119,8 @@
 
         </li>
 
+        {% if session.get("nivel_permissao") == "ADMIN" %}
+
         <li>
 
             <a href="{{ url_for('usuarios') }}">
@@ -130,6 +132,40 @@
             </a>
 
         </li>
+
+        {% endif %}
+
+        {% if session.get("nivel_permissao") == "ADMIN" %}
+
+        <li>
+
+            <a href="{{ url_for('solicitacoes') }}">
+
+               <i class="fa-solid fa-bell"></i>
+
+               <span>Solicitações</span>
+
+            </a>
+
+        </li>
+
+        {% endif %}
+
+        {% if session.get("nivel_permissao") == "GERENTE" %}
+
+        <li>
+
+            <a href="{{ url_for('solicitar_usuario') }}">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <span>Solicitar Usuário</span>
+
+            </a>
+
+        </li>
+
+        {% endif %}
 
         <li>
 

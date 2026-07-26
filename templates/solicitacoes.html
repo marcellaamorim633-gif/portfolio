@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solicitações | AS Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='nav.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='usuarios.css') }}">
+
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <main class="content">
+
+        <div class="container">
+
+            <h1>Solicitações Pendentes</h1>
+
+            <section class="card">
+
+                {% if solicitacoes %}
+
+                    {% for solicitacao in solicitacoes %}
+
+                        <div class="solicitacao">
+
+                            <h3>
+                                Solicitação para adicionar usuário
+                            </h3>
+
+                            <p>
+                                <strong>Nome:</strong>
+                                {{ solicitacao.nome_usuario }}
+                            </p>
+
+                            <p>
+                                <strong>E-mail:</strong>
+                                {{ solicitacao.email_usuario }}
+                            </p>
+
+                            <p>
+                                <strong>Cargo:</strong>
+                                {{ solicitacao.cargo }}
+                            </p>
+
+                            <hr>
+
+                            <a href="#"
+                               class="btn-add">
+
+                                Aprovar
+
+                            </a>
+
+                            <a href="#"
+                               class="btn-delete">
+
+                                Recusar
+
+                            </a>
+
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <p>Nenhuma solicitação pendente.</p>
+
+                {% endif %}
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
