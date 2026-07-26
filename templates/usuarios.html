@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Usuários | AS Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='nav.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='usuarios.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <main class="content">
+
+        <div class="container">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Usuários</h1>
+
+                    <span>Gerencie os usuários da sua empresa</span>
+
+                </div>
+
+                <a href="{{ url_for('adicionar_usuario') }}" class="btn-add">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Adicionar usuário
+
+                </a>
+
+            </header>
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>Usuários cadastrados</h2>
+
+                    <span>{{ usuarios|length }} usuário(s)</span>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Nome</th>
+
+                                <th>E-mail</th>
+
+                                <th>Cargo</th>
+
+                                <th>Nível de Permissão</th>
+
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            {% for usuario in usuarios %}
+
+                            <tr>
+
+                                <td>{{ usuario.nome }}</td>
+
+                                <td>{{ usuario.email }}</td>
+
+                                <td>{{ usuario.cargo }}</td>
+
+                                <td>
+
+                                    <span class="badge">
+
+                                        {{ usuario.nivel_permissao }}
+
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                  <a href="{{ url_for('editar_usuario', id=usuario.id) }}"
+                                     class="action-btn">
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+                                    <a href="{{ url_for('excluir_usuario', id=usuario.id) }}"
+                                     class="action-btn delete"
+                                     onclick="return confirm('Tem certeza que deseja excluir este usuário?')">
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

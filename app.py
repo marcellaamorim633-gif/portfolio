@@ -82,8 +82,6 @@ def cadastro():
 
         nome = request.form["nome"]
         empresa = request.form["empresa"]
-        razao_social = request.form["razao_social"]
-        cnpj = request.form["cnpj"]
         email = request.form["email"]
         senha = request.form["senha"]
         confirmar_senha = request.form["confirmar_senha"]
@@ -93,12 +91,10 @@ def cadastro():
 
         cursor.execute("""
             INSERT INTO empresas
-            (nome_fantasia, razao_social, cnpj)
-            VALUES (%s, %s, %s)
+            (nome_fantasia)
+            VALUES (%s)
         """, (
             empresa,
-            razao_social,
-            cnpj
         ))
 
         empresa_id = cursor.lastrowid
@@ -135,6 +131,145 @@ def recuperar():
 
     return render_template("recuperar.html")
 
+
+
+@app.route("/usuarios")
+def usuarios():
+
+    if "usuario_id" not in session:
+        return redirect(url_for("login"))
+
+    if session["nivel_permissao"] != "ADMIN":
+        return "Acesso negado."
+
+    cursor.execute("""
+        SELECT id, nome, email, cargo, nivel_permissao
+        FROM usuarios
+        WHERE empresa_id = %s
+    """, (
+        session["empresa_id"],
+    ))
+
+    usuarios = cursor.fetchall()
+
+    return render_template(
+        "usuarios.html",
+        usuarios=usuarios
+    )
+
+@app.route("/usuarios/adicionar", methods=["GET", "POST"])
+def adicionar_usuario():
+
+    if "usuario_id" not in session:
+        return redirect(url_for("login"))
+
+    if session["nivel_permissao"] != "ADMIN":
+        return "Acesso negado."
+
+    if request.method == "POST":
+
+        nome = request.form["nome"]
+        email = request.form["email"]
+        senha = request.form["senha"]
+        cargo = request.form["cargo"]
+        nivel_permissao = request.form["nivel_permissao"]
+
+        cursor.execute("""
+            INSERT INTO usuarios
+            (nome, email, senha, cargo, nivel_permissao, empresa_id)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """, (
+            nome,
+            email,
+            senha,
+            cargo,
+            nivel_permissao,
+            session["empresa_id"]
+        ))
+
+        return redirect(url_for("usuarios"))
+
+    return render_template("adicionar_usuario.html")
+
+@app.route("/usuarios/editar/<int:id>", methods=["GET", "POST"])
+def editar_usuario(id):
+
+    if "usuario_id" not in session:
+        return redirect(url_for("login"))
+
+    if session["nivel_permissao"] != "ADMIN":
+        return "Acesso negado."
+
+    cursor.execute("""
+        SELECT *
+        FROM usuarios
+        WHERE id = %s
+        AND empresa_id = %s
+    """, (
+        id,
+        session["empresa_id"]
+    ))
+
+    usuario = cursor.fetchone()
+
+    if not usuario:
+        return "Usuário não encontrado."
+
+    if request.method == "POST":
+
+        nome = request.form["nome"]
+        email = request.form["email"]
+        cargo = request.form["cargo"]
+        nivel_permissao = request.form["nivel_permissao"]
+
+        cursor.execute("""
+            UPDATE usuarios
+            SET nome = %s,
+                email = %s,
+                cargo = %s,
+                nivel_permissao = %s
+            WHERE id = %s
+            AND empresa_id = %s
+        """, (
+            nome,
+            email,
+            cargo,
+            nivel_permissao,
+            id,
+            session["empresa_id"]
+        ))
+
+        return redirect(url_for("usuarios"))
+
+    return render_template(
+        "editar_usuario.html",
+        usuario=usuario
+    )
+
+@app.route("/usuarios/excluir/<int:id>")
+def excluir_usuario(id):
+
+    if "usuario_id" not in session:
+        return redirect(url_for("login"))
+
+    if session["nivel_permissao"] != "ADMIN":
+        return "Acesso negado."
+
+    if id == session["usuario_id"]:
+        return "Você não pode excluir sua própria conta."
+
+    cursor.execute("""
+        DELETE FROM usuarios
+        WHERE id = %s
+        AND empresa_id = %s
+    """, (
+        id,
+        session["empresa_id"]
+    ))
+
+    return redirect(url_for("usuarios"))
+
+
 # =========================
 # LOGOUT
 # =========================
@@ -151,3 +286,5 @@ def logout():
 # =========================
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
+
+    

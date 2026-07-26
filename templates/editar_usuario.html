@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Usuário | AS Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='nav.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='usuarios.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <main class="content">
+
+        <div class="container">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Editar Usuário</h1>
+
+                    <span>Atualize as informações do usuário</span>
+
+                </div>
+
+            </header>
+
+            <section class="card">
+
+                <form method="POST">
+
+                    <label>Nome completo</label>
+
+                    <input type="text"
+                           name="nome"
+                           value="{{ usuario.nome }}"
+                           required>
+
+                    <label>E-mail</label>
+
+                    <input type="email"
+                           name="email"
+                           value="{{ usuario.email }}"
+                           required>
+
+                    <label>Cargo</label>
+
+                    <input type="text"
+                           name="cargo"
+                           value="{{ usuario.cargo }}"
+                           required>
+
+                    <label>Nível de permissão</label>
+
+                    <select name="nivel_permissao" required>
+
+                        <option value="USER"
+                            {% if usuario.nivel_permissao == "USER" %}selected{% endif %}>
+                            Usuário
+                        </option>
+
+                        <option value="GERENTE"
+                            {% if usuario.nivel_permissao == "GERENTE" %}selected{% endif %}>
+                            Gerente
+                        </option>
+
+                        <option value="ADMIN"
+                            {% if usuario.nivel_permissao == "ADMIN" %}selected{% endif %}>
+                            Administrador
+                        </option>
+
+                    </select>
+
+                    <button type="submit" class="btn-add">
+
+                        <i class="fa-solid fa-save"></i>
+
+                        Salvar alterações
+
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

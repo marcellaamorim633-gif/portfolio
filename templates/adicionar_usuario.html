@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adicionar Usuário | AS Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='nav.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='usuarios.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <main class="content">
+
+        <div class="container">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Adicionar Usuário</h1>
+
+                    <span>Cadastre um novo usuário na empresa</span>
+
+                </div>
+
+            </header>
+
+            <section class="card">
+
+                <form method="POST">
+
+                    <label>Nome completo</label>
+
+                    <input type="text"
+                           name="nome"
+                           placeholder="Digite o nome completo"
+                           required>
+
+                    <label>E-mail</label>
+
+                    <input type="email"
+                           name="email"
+                           placeholder="usuario@email.com"
+                           required>
+
+                    <label>Senha</label>
+
+                    <input type="password"
+                           name="senha"
+                           placeholder="Digite uma senha"
+                           required>
+
+                    <label>Cargo</label>
+
+                    <input type="text"
+                           name="cargo"
+                           placeholder="Ex: Funcionário, Gerente..."
+                           required>
+
+                    <label>Nível de permissão</label>
+
+                    <select name="nivel_permissao" required>
+
+                        <option value="">Selecione uma permissão</option>
+
+                        <option value="USER">Usuário</option>
+
+                        <option value="GERENTE">Gerente</option>
+
+                        <option value="ADMIN">Administrador</option>
+
+                    </select>
+
+                    <button type="submit" class="btn-add">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Adicionar usuário
+
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

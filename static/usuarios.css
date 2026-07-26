@@ -1,0 +1,157 @@
+:root {
+    --primary: #0F4C5C;
+    --primary-hover: #15616D;
+    --primary-light: #36B4CC;
+
+    --background: #050608;
+    --surface: #11161D;
+    --card: #171D25;
+
+    --text: #F8FAFC;
+    --text-light: #94A3B8;
+
+    --border: rgba(255,255,255,.06);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+}
+
+.container {
+    width: min(100%, 1450px);
+    margin: auto;
+    padding: clamp(16px, 2vw, 32px);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.topbar span {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.btn-add {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .25s;
+}
+
+.btn-add:hover {
+    background: var(--primary-hover);
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.card-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-header span {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    color: var(--text-light);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 16px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.badge {
+    background: rgba(54, 180, 204, .12);
+    color: var(--primary-light);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.action-btn {
+    border: none;
+    background: var(--surface);
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: .25s;
+}
+
+.action-btn:hover {
+    background: var(--primary);
+}
+
+.action-btn.delete:hover {
+    background: #8B1E1E;
+}
+
+@media (max-width: 700px) {
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    table {
+        min-width: 700px;
+    }
+}
