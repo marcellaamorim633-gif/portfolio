@@ -1,145 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Marcella Amorim: projetos em Python, Flask, SQL, dashboards e automação.">
-  <meta name="theme-color" content="#111827">
-  <title>Marcella Amorim | Portfólio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-  <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Marcella Amorim - QA & Desenvolvimento</title>
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Marcella Amorim, início"><span class="brand-mark">&lt;/&gt;</span><span>Marcella<span class="accent">.</span></span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav" id="mainNav" aria-label="Navegação principal">
-        <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a class="active" href="#projetos">Projetos</a><a href="#tecnologias">Tecnologias</a><a href="#contato">Contato</a>
-      </nav>
-      <a class="header-cta" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
-      <div class="container hero-inner">
-        <span class="eyebrow"><span class="status-dot"></span> Portfólio de desenvolvimento</span>
-        <h1>Olá, sou <span>Marcella Amorim</span></h1>
-        <p class="hero-subtitle">Desenvolvedora em formação, criando soluções digitais com Python, dados e automação.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projetos">Explorar projetos <span>↘</span></a>
-          <a class="button button-secondary" href="#contato">Entrar em contato</a>
+    <!-- Header / Navegação -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Marcella<span>.dev</span></a>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
         </div>
-        <div class="hero-tags" aria-label="Principais áreas"><span>Python</span><span>Flask</span><span>SQL</span><span>Automação</span></div>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="greeting">Olá, meu nome é</span>
+                <h1>Marcella Amorim</h1>
+                <h2>Garantia de Qualidade (QA) & Desenvolvimento de Software</h2>
+                <p>
+                    Especializada em automação de testes, validação de APIs REST, desenvolvimento de sistemas operacionais (WMS/Logística) e plataformas analíticas na nuvem.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                    <a href="https://github.com/marcellaamorim633-gif" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    ```html
-    <section class="projects-section section" id="projetos">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-kicker">MEU TRABALHO</span>
-          <h2>Projeto em destaque</h2>
-          <p>
-            Conheça uma das soluções que desenvolvi para explorar
-            tecnologia, monitoramento industrial e visualização de dados.
-          </p>
-        </div>
-    
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-art art-industrial">
-              <div class="art-top">
-                <span class="art-chip">01 / INDÚSTRIA 4.0</span>
-                <span class="art-icon">⌁</span>
-              </div>
-    
-              <div class="mini-dashboard">
-                <div class="mini-line">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-    
-                <div class="chart-bars">
-                  <b></b>
-                  <b></b>
-                  <b></b>
-                  <b></b>
-                  <b></b>
-                  <b></b>
-                  <b></b>
-                  <b></b>
-                </div>
-    
-                <div class="mini-status">
-                  <span></span>
-                  Monitoramento de máquinas
-                </div>
-              </div>
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="projects-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projetos em Destaque</h2>
+                <p>Soluções operacionais, automações e sistemas analíticos desenvolvidos para cenários reais.</p>
             </div>
-    
-            <div class="project-content">
-              <div class="project-type">
-                Internet das Coisas · Simulação
-              </div>
-    
-              <h3>Linha Conectada 4.0</h3>
-    
-              <p>
-                Dashboard demonstrativo de monitoramento industrial,
-                com leituras simuladas, acompanhamento do status das
-                máquinas e histórico de dados.
-              </p>
-    
-              <div class="tech-list">
-                <span>Python</span>
-                <span>Flask</span>
-                <span>SQLite</span>
-                <span>JavaScript</span>
-              </div>
-    
-              <div class="project-actions">
-                <a
-                  class="project-button"
-                  href="https://linha-conectada-4-0.onrender.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Acessar demonstração <span>↗</span>
-                </a>
-              </div>
+
+            <div class="projects-grid">
+
+                <!-- Card 1: AutoQA (Plataforma QA) -->
+                <div class="project-card featured-card">
+                    <div class="project-header">
+                        <span class="badge">QA Engineering & Full Stack</span>
+                        <h3>AutoQA — Plataforma de Automação & Monitoramento de APIs</h3>
+                    </div>
+
+                    <p class="project-description">
+                        Plataforma web interna desenvolvida em Python e Flask para execução automatizada de testes de regressão e validação contínua de rotas críticas de APIs REST. O sistema calcula a taxa de aprovação (Pass Rate), exibe métricas no Dashboard e possui integração automática para geração imediata de defeitos ao identificar falhas.
+                    </p>
+
+                    <div class="project-highlights">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Execução de suítes funcionais e regressão com <strong>Pytest</strong>.</li>
+                            <li><i class="fas fa-check-circle"></i> Módulo <strong>DefectService</strong> para geração automática de relatórios de bugs.</li>
+                            <li><i class="fas fa-check-circle"></i> Deploy em nuvem no <strong>Render</strong> com servidor WSGI <strong>Gunicorn</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tags">
+                        <span>Python 3</span>
+                        <span>Flask</span>
+                        <span>Pytest</span>
+                        <span>REST API</span>
+                        <span>SQLAlchemy</span>
+                        <span>Gunicorn</span>
+                        <span>Render Cloud</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://autoqa-lpj9.onrender.com" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Ver Aplicação Online
+                        </a>
+                        <a href="https://github.com/marcellaamorim633-gif/AutoQA" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-github"></i> Código no GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Linha Conectada (WMS & Armazém) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="badge badge-subtle">Logística & Operações WMS</span>
+                        <h3>Linha Conectada 4.0 — Gestão de Armazém & Operações WMS</h3>
+                    </div>
+
+                    <p class="project-description">
+                        Sistema para gerenciamento e inteligência operacional de armazém. Integra rotinas de controle de estoque atual, fluxo diário de recebimento e expedição, auditoria de regras de armazenamento, gestão de contratos e métricas operacionais para tomada de decisão em tempo real.
+                    </p>
+
+                    <div class="project-highlights">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Dashboards dinâmicos para acompanhamento de <strong>Recebimento, Separação e Expedição</strong>.</li>
+                            <li><i class="fas fa-check-circle"></i> Consultas complexas em banco de dados através de <strong>Views SQL</strong> operacionais.</li>
+                            <li><i class="fas fa-check-circle"></i> Módulo de <strong>Gestão de No-Show</strong> e medições de capacidade de armazenagem.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQL / Database Views</span>
+                        <span>JavaScript</span>
+                        <span>HTML5 / CSS3</span>
+                        <span>WMS Analytics</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://linha-conectada-4-0.onrender.com/" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Ver Aplicação Online
+                        </a>
+                        <a href="https://github.com/marcellaamorim633-gif/site_armazem_wms" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-github"></i> Código no GitHub
+                        </a>
+                    </div>
+                </div>
+
             </div>
-          </article>
         </div>
-    
-        <p class="project-note">
-          Este é o projeto disponível para demonstração no momento.
-          Novos projetos serão adicionados ao portfólio conforme
-          avançarem para a fase de apresentação.
-        </p>
-      </div>
     </section>
-    ```</section>
 
-    <section class="section about-section" id="sobre"><div class="container about-inner"><div><span class="section-kicker">UM POUCO SOBRE MIM</span><h2>Tecnologia com propósito.</h2></div><div class="about-copy"><p>Tenho interesse em desenvolvimento de sistemas, análise de dados e automação de processos. Gosto de transformar necessidades práticas em aplicações claras, úteis e fáceis de utilizar.</p><p>Este portfólio reúne projetos em evolução e demonstrações do que venho aprendendo e construindo.</p></div></div></section>
+    <!-- Seção de Habilidades -->
+    <section id="habilidades" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Habilidades Técnicas</h2>
+                <p>Ferramentas e tecnologias aplicadas em qualidade de software, logísticas corporativas e desenvolvimento.</p>
+            </div>
 
-    <section class="section skills-section" id="tecnologias"><div class="container"><div class="section-heading"><span class="section-kicker">FERRAMENTAS</span><h2>Tecnologias</h2><p>Ferramentas presentes nos projetos e estudos.</p></div><div class="skills-grid"><div class="skill"><span class="skill-symbol">Py</span><div><strong>Python</strong><small>Scripts e lógica de aplicação</small></div></div><div class="skill"><span class="skill-symbol">Fl</span><div><strong>Flask</strong><small>Aplicações web e APIs</small></div></div><div class="skill"><span class="skill-symbol">SQL</span><div><strong>SQL</strong><small>Consultas e dados relacionais</small></div></div><div class="skill"><span class="skill-symbol">JS</span><div><strong>JavaScript</strong><small>Interatividade no navegador</small></div></div><div class="skill"><span class="skill-symbol">&lt;/&gt;</span><div><strong>HTML & CSS</strong><small>Interfaces responsivas</small></div></div><div class="skill"><span class="skill-symbol">API</span><div><strong>APIs e JSON</strong><small>Integração e processamento</small></div></div></div></div></section>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <i class="fas fa-vial skill-icon"></i>
+                    <h3>Qualidade & Testes</h3>
+                    <ul>
+                        <li>Automação de Testes de API REST</li>
+                        <li>Testes Funcionais, Integração e Regressão</li>
+                        <li>Framework Pytest</li>
+                        <li>Validação de Status HTTP, Payloads e Erros</li>
+                        <li>Investigação e Gestão de Defeitos</li>
+                    </ul>
+                </div>
 
-    <section class="contact-section" id="contato"><div class="container contact-inner"><span class="section-kicker">CONTATO</span><h2>Vamos construir algo legal?</h2><p>Estou aberta a conversar sobre tecnologia, projetos e oportunidades de desenvolvimento.</p><a
-      class="button button-primary"
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=marcellaamorim633%40gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Enviar um e-mail <span>↗</span>
-  </a><small>Substitua o e-mail pelo seu endereço profissional antes de publicar.</small></div></section>
-  </main>
-  <footer class="footer"><div class="container footer-inner"><a class="brand" href="#inicio"><span class="brand-mark">&lt;/&gt;</span><span>Marcella<span class="accent">.</span></span></a><span>Feito com dedicação e curiosidade por tecnologia.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+                <div class="skill-category">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3>Desenvolvimento & Backend</h3>
+                    <ul>
+                        <li>Python 3 & Lógica de Programação</li>
+                        <li>Flask (Arquitetura MVC / Web)</li>
+                        <li>Bancos de Dados & Consultas SQL / Views</li>
+                        <li>Servidores Web (Gunicorn, WSGI)</li>
+                        <li>HTML5, CSS3, JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <i class="fas fa-boxes-packing skill-icon"></i>
+                    <h3>Domínio Negocial & Ferramentas</h3>
+                    <ul>
+                        <li>Sistemas WMS (Armazenagem & Expedição)</li>
+                        <li>Git & GitHub (Versionamento)</li>
+                        <li>Deploy e Hospedagem em Nuvem (Render)</li>
+                        <li>Ambientes Linux / Bash</li>
+                        <li>VS Code / Cursor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Marcella Amorim. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://github.com/marcellaamorim633-gif" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://autoqa-lpj9.onrender.com" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
